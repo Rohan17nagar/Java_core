@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<script type="text/javascript">
+  function calc(){
+    var salary = document.getElementById('salary').value;
+	var ta = document.getElementById('ta').value;
+	var da = document.getElementById('da').value;
+	var deduct = document.getElementById('deduct').value;
+	var total = parseInt(salary)+parseInt(ta)+parseInt(da)+parseInt(deduct);
+	document.getElementById('pfded').value = total;
+  }
+  
+</script>
+
+<body>
+
+<div>
+  <h1></h1>
+  <form>
+  Email*          : <input type="text" id="email" placeholder="Enter Email"><br><br>
+  name*           : <input type="text" id="name" placeholder="Enter name"><br><br>
+  Basic Sal*      : <input type="text" id="salary" placeholder="Enter Salary"><br><br>
+  TA*             : <input type="text" id="ta" placeholder="Enter TA"><br><br>
+  DA*             : <input type="text" id="da" placeholder="Enter DA"><br><br>
+  Deduction       : <input type="text" id="deduct" placeholder="Enter Deduction"><br><br>
+  pf deduction    : <input type="text" id="pfded" readonly="calc();"><br><br>
+  Grand total     : <input type="text" id="gt" readonly><br><br>
+</form>
+</div>
+
+
+
+
+</body>
+</html>
