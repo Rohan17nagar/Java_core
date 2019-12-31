@@ -93,8 +93,7 @@
 			        <th>Company Name</th>
 			        <th>Email</th>
 			        <th>Mobile No.</th>
-			        <th>Address</th>
-			        <th>Option</th>
+			        <th>Address</th>  
 			      </tr>
 			    </thead>
   
@@ -122,7 +121,9 @@
 			   	  <!--  
 			   	   <% String c_name = rs.getString("c_name"); %> 
 			   	  -->
-			   	   <td><a href="Delete.jsp?id=<%=rs.getString("c_id") %>"><button type="button" class="btn btn-primary">delete</button></a></td>			   
+			   	  <%-- 
+			   	   <td><a href="Select.jsp?id=<%=rs.getString("c_id") %>"><button type="button" class="btn btn-primary">select</button></a></td>			   
+			      --%> 
 			      </tr>
 			    </tbody>		
 <% 			

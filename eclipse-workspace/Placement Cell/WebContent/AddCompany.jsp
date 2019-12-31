@@ -39,6 +39,7 @@ Check for commit.
   transform: translate(-50%, -50%);
   color: white;
 }
+
 .header-text button {
   border: none;
   outline: 0;
@@ -49,6 +50,7 @@ Check for commit.
   text-align: center;
   cursor: pointer;
 }
+
 .header-text button:hover {
   background-color: #555;
   color: white;
@@ -66,8 +68,7 @@ Check for commit.
   background-repeat: no-repeat;
   background-size: cover;
 }
- 
- 
+  
 body, html {
   height: 100%;
   font-family: Arial, Helvetica, sans-serif;
@@ -92,10 +93,12 @@ input[type=text], input[type=password] ,li{
   border: none;
   background: #f1f1f1;
 }
+
 input[type=text]:focus, input[type=password]:focus,li:focus {
   background-color: #ddd;
   outline: none;
 }
+
 </style>
 <div class="header-image">
   <div class="header-text">
@@ -234,6 +237,6 @@ function validation(){
 		return false;
 	} */
 }
- </script> 
+</script> 
 </body>
 </html>

@@ -12,7 +12,6 @@
 <title></title>
 </head>
 <body>
-
 <%
 String p_fname1 = request.getParameter("p_fname");
 String p_lname1 = request.getParameter("p_lname");
@@ -20,22 +19,20 @@ String p_lname1 = request.getParameter("p_lname");
 String email1 = request.getParameter("email");
 String password1 = request.getParameter("password");
 String dob1 = request.getParameter("s_dob");
-String s_branch1 = request.getParameter("s_branch1");
+String s_branch1 = request.getParameter("s_branch");
 /* String description1 = request.getParameter("description");*/
 String p_college1 = request.getParameter("p_college");
 String gender1 = request.getParameter("s_gender");
-
-out.println(p_fname1);
+/* out.println(p_fname1);
 out.println(p_lname1);
 //out.println(mob1);
 out.println(email1);
 out.println(password1);
-//out.println(description1);
+out.println(dob1);
+out.println(s_branch1);
 out.println(p_college1);
 out.println(gender1);
-
-
-
+ */
 String driver = "com.mysql.cj.jdbc.Driver";
 String connectionUrl = "jdbc:mysql://localhost:3306/";
 String database = "placement_cell";
@@ -44,13 +41,13 @@ String password = "root";
 
 try {
 Class.forName(driver);
-out.println("Driver loaded success..");
+//out.println("Driver loaded success..");
 } 
 catch (ClassNotFoundException e) {
 out.println("Error in Driver loading");
 }
 %>
-<h1>Retrieve data from database in jsp</h1>
+<h1></h1>
 <%
 try{
 	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/placement_cell?useSSL=false","root","root");
@@ -68,11 +65,12 @@ try{
 	int i = ps.executeUpdate();
 	out.print("success..");
 	con.close();
-	response.sendRedirect("AddPlacementOfficer.jsp");
+	response.sendRedirect("AddStudents.jsp");
 }
-
 catch(Exception e){
-	out.println("Error in Database Query..");
+	%>
+<h1><center>ERROR Occured!!! Please Insert Date in (YYYY-MM-DD) this format Only</center></h1>
+	<%		
 }
 %>
 </body>

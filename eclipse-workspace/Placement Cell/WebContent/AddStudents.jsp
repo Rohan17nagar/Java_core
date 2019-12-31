@@ -95,7 +95,7 @@ input[type=text]:focus, input[type=password]:focus,li:focus {
 </style>
 <div class="header-image">
   <div class="header-text">
-    <h1 style="font-size:50px">Add Student</h1>
+    <h1 style="font-size:50px">Placement Cell Add Students</h1>
     <p></p>
     <!--  <button></button> -->
   </div>
@@ -111,8 +111,7 @@ input[type=text]:focus, input[type=password]:focus,li:focus {
 		<label for="p_lname">Last Name* :</label>
 		<input type="text" name="p_lname" id="p_lname">
 		<span id="plname" class="text-danger font-weight-bold"></span>
-	
-		 <br>
+		<br>
 	<!-- 	
 		<label for="mob">Mobile* :</label>
 		<input type="text" name="mob" id="mob">
@@ -153,44 +152,41 @@ input[type=text]:focus, input[type=password]:focus,li:focus {
 	    <input type="text" name="p_college" id="p_college">
   		<span id="pcollege" class="text-danger font-weight-bold"></span>
 	  	<br>
-	  	
+	  <!-- 	
 	  	<label for="s_gender">Gender* :</label>
 	    <input type="text" name="s_gender" id="s_gender">
   		<span id="sgender" class="text-danger font-weight-bold"></span>
-	  	<br>
+	  	<br> -->
 	  	
-	  	<!-- <label for="s_gender">Gender* :</label>
+	  	 <label for="s_gender">Gender* :</label>
 		
-		<select name="gender" class="form-control" id="s_gender">
-		<option selected="male" value="Default">Male</option>
+		<select name="s_gender" class="form-control" id="s_gender">
+		<option selected="male" value="male">Male</option>
 		<option value="female">Female</option>
 		<option value="other">Other</option>	
+		</select>
 		<span id="sgender" class="text-danger font-weight-bold"></span>
-		
-		</select> -->
+		 <br>
 	  <!-- 	<label for="address">Address* :</label>
 	    <input type="text" name="address" id="description">
   		<span id="address" class="text-danger font-weight-bold"></span>
 	  	<br> 
 		 -->
 		<input type="submit" class="btn btn-success btn-lg btn-block" value="Add">
-		
 </form>
 </div>
-
 <script>
-
 function validation(){
 	var pfname = document.getElementById("p_fname").value;
 	var plname = document.getElementById("p_lname").value;
-	var mob = document.getElementById("mob").value;
+//	var mob = document.getElementById("mob").value;
 	var email = document.getElementById("email_id").value;
 	var pass = document.getElementById("pass").value;
-	
+	var sdob = document.getElementById("s_dob").value;
 //	var conf_pass = document.getElementById("conf_password").value;
 	
 	if(pfname==""){
-		document.getElementById('cname').innerHTML ="**Please enter Company name";
+		document.getElementById('pfname').innerHTML ="**Please enter Company name";
 		return false;
 	}
 	
@@ -204,18 +200,18 @@ function validation(){
 		return false;
 	}
 	
-
 	if((plname.length<=2)||(plname.length>20)){
 		document.getElementById('plname').innerHTML ="**must be between 2-20";
 		return false;		
 	}
 	
+	/* 
 	if(mob==""){
 		document.getElementById('mobile').innerHTML ="**Please enter mobile number";
 		return false;
-	}
+	} */
 	
-	if(isNaN(mob)){
+/* 	if(isNaN(mob)){
 		document.getElementById('mobile').innerHTML ="**Must be digits only";
 		return false;
 	}
@@ -223,28 +219,44 @@ function validation(){
 		document.getElementById('mobile').innerHTML ="**Must be 10 digits only";
 		return false;
 	}
-	
+	 */
 	if(email==""){
 		document.getElementById('email').innerHTML ="**Please enter email id";
 		return false;
 	}
+	
 	if(email.indexOf('@')<=0){
 		document.getElementById('email').innerHTML ="**@ at invalid position";
 		return false;
 	}
+	
 	if((email.charAt(email.length-4)!='.') && (email.charAt(email.length-3)!='.')){
 		document.getElementById('email').innerHTML ="**(.) at invalid position";
-		return false;
-		
+		return false;	
 	}
 	
 	if(pass==""){
 		document.getElementById('password').innerHTML ="**Please enter password";
 		return false;
 	}
+	
 	if((pass.length<=6)||(pass.length>10)){
 		document.getElementById('password').innerHTML ="**must be between 6-10";
 		return false;		
+	}
+	
+	if(sdob==""){
+		document.getElementById('sdob').innerHTML ="**Please enter DOB";
+		return false;
+	}
+	
+	if(sdob.length<10 || sdob.length>10){
+		document.getElementById('sdob').innerHTML ="**Please enter (-)";
+		return false;
+	}
+	if(sdob.charAt(sdob.length-3)!='-'){
+		document.getElementById('sdob').innerHTML ="**(-) Wrong position";
+		return false;
 	}
 }
  </script> 
